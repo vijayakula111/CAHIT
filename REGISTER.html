@@ -1,0 +1,154 @@
+{% block body %}
+{% load static %}
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-compatible" content="IE-edge">
+		<title>RegistrationForm</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'fonts_R/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css_R/style.css' %}">
+	</head>
+
+	<body>
+
+	<!--	<div class="wrapper" style="background-image: url({%static 'images_R/BPlogo.png' %});" > --!>
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{%static 'images_R/BPlogo.png' %}" alt="" height="450" width="450" >
+				</div>
+				<form action="register" method="post">
+					 {% csrf_token %}
+					<h3>Registration Form</h3>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control">
+							<option value="" disabled selected>Registered me as</option>
+							<option value="clinic">clinic</option>
+							<option value="doctor">doctor</option>
+							<option value="patient">patient</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-group">
+						<input type="text" name="first_name" placeholder="First Name" class="form-control">
+						<input type="text" name="last_name"placeholder="Last Name" class="form-control">
+						</div>
+						<div class="form-group">
+						<input type="text"name="mothers_maiden_name" placeholder="Mother's Maiden Name" class="form-control">
+					</div>
+
+					<div class="form-wrapper">
+						<input type="email" name="email"placeholder="Email" class="form-control">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+						<div class="form-wrapper">
+							 <label>
+								 Date of Birth:
+						<input type="date" placeholder="Date of Birth" class="form-control">
+								 </label>
+						<i class="zmdi zmdi-date"></i>
+					</div>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control">
+							<option value="" disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="femal">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Address" class="form-control">
+						<i class="zmdi zmdi-address"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="City" class="form-control">
+						<i class="zmdi zmdi-City"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="State" class="form-control">
+						<i class="zmdi zmdi-state"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="number" placeholder="Postal Code" class="form-control">
+						<i class="zmdi zmdi-postal code"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="number" placeholder="Phone Number" class="form-control">
+						<i class="zmdi zmdi-Phone Number"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="number" placeholder="SSN" class="form-control">
+						<i class="zmdi zmdi-SSN"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Provider Name" class="form-control">
+						<i class="zmdi zmdi-Provider Name"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="number" placeholder="MRN Number" class="form-control">
+						<i class="zmdi zmdi-MRN Number"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Clinic Name" class="form-control">
+						<i class="zmdi zmdi-Clinic Name"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Clinic Address" class="form-control">
+						<i class="zmdi zmdi-Clinic address"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Clinic City" class="form-control">
+						<i class="zmdi zmdi-Clinic City"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Clinic State" class="form-control">
+						<i class="zmdi zmdi-Clinic Sate"></i>
+					</div>
+						<div class="form-wrapper">
+						<input type="text" placeholder="Clinic Postal COde" class="form-control">
+						<i class="zmdi zmdi-Clinic Postal Code"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" id="username" name = "username" placeholder="username" class="form-control">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password"name="password1" placeholder="Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="password2"placeholder="Confirm Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<select name="" id="" class="form-control">
+							<option value="" disabled selected>Select A Security Question?</option>
+							<option value="What is your Mother's Maiden Name?">What is your Mother's Maiden Name?</option>
+							<option value="What is your birth place?">What is your birth place?</option>
+							<option value="What is your pet name?">What is your pet name?</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+						<div class="form-group">
+						<input type="text" placeholder="Enter Answer" class="form-control">
+					</div>
+					<button>Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		<div>
+			 { %for message in messages %}
+	         <h3> {{ message }} </h3>
+			{ % end for %}
+	    </div>
+	</body>
+</html>
+
+{% endblock %}
